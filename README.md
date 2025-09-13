@@ -51,14 +51,14 @@ The goal of this project is to empower small vendors, retailers, and everyday us
 
 ## Usage
 
-# Clone the repository
+## Clone the repository
 git clone <your-repo-url>
 
-# Install dependencies
+## Install dependencies
 pip install -r requirements.txt
 
-# Run denomination detection
+## Run denomination detection
 python detect.py
 
-# Run fake currency detection
+## Run fake currency detection
 python fakedet.py
