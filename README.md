@@ -15,9 +15,56 @@ The goal of this project is to empower small vendors, retailers, and everyday us
 ---
 
 ## Features
-- **Image Processing Backbone**: Uses OpenCV to detect watermarks, security strips, and microprinted regions.  
-- **Deep Learning Classifier**: Keras/TensorFlow model trained to classify notes as *genuine* or *fake*.  
+- **Denomination Detection**: Uses **OpenCV ORB** feature matching to identify the correct currency note (20, 50, 100, 500 INR).  
+- **Fake vs Real Classification**: Implements **VGG16-based transfer learning** with image augmentation for robust classification.  
+- **Image Preprocessing**: Resizing, grayscale conversion, thresholding, and edge detection to enhance accuracy.  
 - **Training Insights**: Includes `loss.png` to visualize model training performance.  
 - **Flexible Usage**: Supports both batch testing and single-image detection.  
 
 ---
+
+## Dataset
+- Contains **1200+ images** of Indian currency, categorized into `fake` and `real`.  
+- Split into training, validation, and test sets for model development and evaluation.  
+
+---
+
+## Methodology
+1. **Image Preprocessing**: Enhance quality and extract features using custom utilities (`utils.py`).  
+2. **Denomination Detection**: ORB keypoint detection and brute-force matching using OpenCV.  
+3. **Fake Currency Detection**: Transfer learning with VGG16. Images augmented with rotations, flips, brightness changes, and shifts to improve generalization.  
+4. **Output**: Matched denominations are displayed with keypoints, and fake/real classification is provided for each note.  
+
+---
+
+## Challenges Faced
+- Tuning hyperparameters such as the number of epochs was crucial to avoid overfitting or underfitting. Adjustments improved validation accuracy and model performance.  
+
+---
+
+## Results
+- Successfully detected denominations with ORB feature matching.  
+- Classified fake vs real notes with high accuracy using VGG16-based transfer learning.  
+- Robust against variations in lighting, rotation, and scaling.  
+
+---
+
+## Usage
+1. Clone the repository:  
+```bash
+git clone <your-repo-url>
+Install dependencies:
+
+bash
+Copy code
+pip install -r requirements.txt
+Run denomination detection:
+
+bash
+Copy code
+python detect.py
+Run fake currency detection:
+
+bash
+Copy code
+python fakedet.py
