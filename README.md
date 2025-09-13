@@ -50,21 +50,20 @@ The goal of this project is to empower small vendors, retailers, and everyday us
 ---
 
 ## Usage
-1. Clone the repository:  
+
+1. **Clone the repository:**
 ```bash
 git clone <your-repo-url>
-Install dependencies:
 
-bash
-Copy code
+
+2. Install dependencies:
+
 pip install -r requirements.txt
-Run denomination detection:
 
-bash
-Copy code
+3. Run denomination detection:
+
 python detect.py
-Run fake currency detection:
 
-bash
-Copy code
+4. Run fake currency detection:
+
 python fakedet.py
